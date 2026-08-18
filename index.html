@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Black Sea Tattoo — Bold · Clean · Bright</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* Make sure logo displays properly */
+        .nav-logo img {
+            display: block;
+            height: 45px;
+            width: auto;
+        }
+        #hero .brand img {
+            display: block;
+            max-width: 450px;
+            width: 100%;
+            height: auto;
+            margin: 0 auto 10px;
+        }
+        #hero .brand {
+            margin-bottom: 10px;
+        }
+        .hero-badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #8b0000;
+            border: 1px solid rgba(139, 0, 0, 0.15);
+            padding: 6px 20px;
+            margin-bottom: 20px;
+        }
+        .tagline {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.8rem;
+            color: #0d0d0d;
+            margin-top: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        .tagline span {
+            color: #8b0000;
+        }
+        .info-line {
+            font-size: 1.05rem;
+            color: #555;
+            margin-top: 6px;
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+        .info-line i {
+            color: #8b0000;
+            margin-right: 6px;
+        }
+        .hero-actions {
+            margin-top: 30px;
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        /* Fix for responsive */
+        @media (max-width: 768px) {
+            #hero .brand img {
+                max-width: 280px;
+            }
+            .tagline {
+                font-size: 1.3rem;
+            }
+            .info-line {
+                font-size: 0.9rem;
+            }
+        }
+        @media (max-width: 480px) {
+            #hero .brand img {
+                max-width: 200px;
+            }
+            .tagline {
+                font-size: 1rem;
+            }
+            .hero-badge {
+                font-size: 0.6rem;
+                padding: 4px 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="assets/images/logo.png" alt="Black Sea Tattoo" />
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="artists.html">Artists</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="aftercare.html">Aftercare</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="booking.html" class="btn-nav">Book Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Est. 2013</div>
+                <div class="brand">
+                    <img src="assets/images/logo.png" alt="Black Sea Tattoo" />
+                </div>
+                <div class="tagline">Bold · Clean · Bright — <span>WE DO IT RIGHT</span></div>
+                <div class="info-line">
+                    <i class="fas fa-map-marker-alt"></i> 2523 North Main St. · Walnut Creek, CA 94597
+                </div>
+                <div class="info-line">
+                    <i class="fas fa-clock"></i> 7 Days a Week! · Open til Closed
+                </div>
+                <div class="hero-actions">
+                    <a href="booking.html" class="btn-primary"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+                    <a href="portfolio.html" class="btn-secondary">View Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <img src="assets/images/logo.png" alt="Black Sea Tattoo" style="height:35px; width:auto; margin-bottom:8px;" />
+                        <span class="tagline" style="display:block; color:#666; font-size:0.8rem; letter-spacing:3px;">TATTOO</span>
+                        <p style="color:#666; font-size:0.9rem; margin-top:10px; line-height:1.8;">
+                            Bold · Clean · Bright — WE DO IT RIGHT<br />
+                            2523 North Main St., Walnut Creek, CA 94597
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="artists.html">Artists</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="aftercare.html">Aftercare</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:tattoo.blacksee@gmail.com"><i class="fas fa-envelope"></i> Booking</a></li>
+                        <li><a href="mailto:donaldsd.cates@gmail.com"><i class="fas fa-envelope"></i> General Inquiries</a></li>
+                        <li><a href="https://tiktok.com/@brandonbearrtattoos" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 <span>Black Sea Tattoo</span>. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

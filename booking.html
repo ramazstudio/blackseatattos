@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Black Sea Tattoo — Book Appointment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ===== NAV ===== -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">BLACK <span>SEA</span> TATTOO</div>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="artists.html">Artists</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="aftercare.html">Aftercare</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="booking.html" class="btn-nav">Book Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== BOOKING ===== -->
+    <section style="padding-top:40px; min-height:70vh;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Book Now</span>
+                <h2 class="section-title">Book an <span>Appointment</span></h2>
+                <p class="section-subtitle">Select your date, time, and fill in your details.</p>
+            </div>
+
+            <div class="booking-wrapper">
+                <!-- Calendar -->
+                <div class="booking-card">
+                    <h3>📅 Select a Date</h3>
+                    <div class="calendar-section">
+                        <div class="calendar-header">
+                            <button class="nav-btn" id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                            <span class="month-year" id="monthYear">August 2026</span>
+                            <button class="nav-btn" id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                        <div class="calendar-grid" id="calendarGrid"></div>
+                    </div>
+                    <div style="margin-top:12px;">
+                        <p style="color:#666; font-size:0.85rem; margin:0;">
+                            <span style="display:inline-block; width:14px; height:14px; background:#0d0d0d; vertical-align:middle; margin-right:6px;"></span>
+                            Selected
+                            <span style="display:inline-block; width:14px; height:14px; border:2px solid #8b0000; vertical-align:middle; margin-left:16px; margin-right:6px;"></span>
+                            Today
+                            <span style="display:inline-block; width:14px; height:14px; background:#e8e5df; vertical-align:middle; margin-left:16px; margin-right:6px;"></span>
+                            Unavailable
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Time Slots -->
+                <div class="booking-card">
+                    <h3>⏰ Select a Time</h3>
+                    <p style="color:#666; font-size:0.9rem; margin-bottom:12px;">
+                        <i class="fas fa-clock" style="color:#8b0000;"></i>
+                        Available slots for: <strong id="selectedDateDisplay">No date selected</strong>
+                    </p>
+                    <div id="timeSlotsContainer">
+                        <div style="text-align:center; padding:20px; color:#999;">
+                            <p style="margin:0;">Please select a date first</p>
+                        </div>
+                    </div>
+                    <div class="confirmation-box" id="confirmationBox">
+                        <div class="info">
+                            <i class="fas fa-check-circle"></i>
+                            <div class="details">
+                                <strong id="confirmDate">—</strong> at <strong id="confirmTime">—</strong>
+                                <span style="color:#666; font-size:0.85rem; display:block;">You've selected this slot</span>
+                            </div>
+                        </div>
+                        <button class="btn-cancel" id="cancelBooking"><i class="fas fa-times"></i> Cancel</button>
+                    </div>
+                </div>
+
+                <!-- Booking Form -->
+                <form class="booking-card" id="bookingForm">
+                    <h3>📝 Your Details</h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" placeholder="e.g., John Doe" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" placeholder="you@example.com" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" placeholder="(123) 456-7890" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tattooIdea">Tattoo Idea / Description *</label>
+                        <textarea id="tattooIdea" rows="3" placeholder="Describe what you want..." required></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="preferredDate">Preferred Date *</label>
+                            <input type="date" id="preferredDate" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="preferredTime">Preferred Time *</label>
+                            <input type="time" id="preferredTime" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sizePlacement">Size &amp; Placement *</label>
+                        <input type="text" id="sizePlacement" placeholder="e.g., 6 inches, forearm" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="paymentMethod">Payment Method *</label>
+                        <select id="paymentMethod" required>
+                            <option value="">Select a payment method...</option>
+                            <option value="Bank Transfer">Bank Transfer</option>
+                            <option value="PayPal">PayPal</option>
+                            <option value="Venmo">Venmo</option>
+                            <option value="Cash App">Cash App</option>
+                            <option value="Gift Card">Gift Card</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="giftCardGroup" style="display:none;">
+                        <label for="giftCardUpload">Upload Gift Card Image *</label>
+                        <input type="file" id="giftCardUpload" accept="image/*" />
+                        <p style="color:#666; font-size:0.8rem; margin-top:4px;">
+                            <i class="fas fa-info-circle"></i> Please upload a clear photo of your gift card
+                        </p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="referenceUpload">Tattoo Style / Sample (optional)</label>
+                        <input type="file" id="referenceUpload" accept="image/*" />
+                        <p style="color:#666; font-size:0.8rem; margin-top:4px;">
+                            <i class="fas fa-info-circle"></i> Upload a reference image if you have one
+                        </p>
+                    </div>
+
+                    <div class="terms-check">
+                        <input type="checkbox" id="terms" required />
+                        <label for="terms">
+                            I agree to the <a href="#">Terms &amp; Conditions</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-primary" style="width:100%;">
+                        <i class="fas fa-calendar-check"></i> Book Appointment
+                    </button>
+
+                    <p style="text-align:center; color:#666; font-size:0.8rem; margin-top:12px;">
+                        <i class="fas fa-lock" style="color:#8b0000;"></i>
+                        Your booking will be sent to <strong>tattoo.blacksee@gmail.com</strong>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        BLACK <span>SEA</span>
+                        <span class="tagline">TATTOO</span>
+                        <p>Bold · Clean · Bright — WE DO IT RIGHT<br />2523 North Main St., Walnut Creek, CA 94597</p>
+                    </div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="artists.html">Artists</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="aftercare.html">Aftercare</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:tattoo.blacksee@gmail.com"><i class="fas fa-envelope"></i> Booking</a></li>
+                        <li><a href="mailto:donaldsd.cates@gmail.com"><i class="fas fa-envelope"></i> General Inquiries</a></li>
+                        <li><a href="https://tiktok.com/@brandonbearrtattoos" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 <span>Black Sea Tattoo</span>. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
