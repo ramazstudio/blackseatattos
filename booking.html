@@ -15,6 +15,7 @@
         .booking-card label { display: block; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.85rem; color: #0d0d0d; margin-bottom: 4px; letter-spacing: 0.5px; }
         .booking-card input, .booking-card select, .booking-card textarea { width: 100%; padding: 12px 14px; background: #faf8f5; border: 1px solid rgba(0,0,0,0.06); border-radius: 0; color: #0d0d0d; font-size: 1rem; font-family: 'Inter', sans-serif; transition: border-color 0.3s ease; }
         .booking-card input:focus, .booking-card select:focus, .booking-card textarea:focus { outline: none; border-color: #8b0000; }
+        .booking-card input[type="file"] { padding: 10px; background: #faf8f5; }
         .booking-card .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
         .booking-card .terms-check { display: flex; align-items: center; gap: 10px; margin: 16px 0; }
         .booking-card .terms-check input[type="checkbox"] { width: 18px; height: 18px; accent-color: #8b0000; margin: 0; }
@@ -181,8 +182,8 @@
                 </div>
 
                 <!-- ===== BOOKING FORM ===== -->
-                <!-- ✅ PURE NETLIFY FORM — NO FORMSPREE! -->
-                <form class="booking-card" id="bookingForm" name="booking" method="POST" data-netlify="true">
+                <!-- ✅ NETLIFY FORM WITH FILE UPLOADS RESTORED! -->
+                <form class="booking-card" id="bookingForm" name="booking" method="POST" data-netlify="true" enctype="multipart/form-data">
 
                     <input type="hidden" name="form-name" value="booking" />
 
@@ -237,15 +238,33 @@
                         </select>
                     </div>
 
-                    <!-- Gift Card Details -->
+                    <!-- ===== GIFT CARD IMAGE UPLOAD (RESTORED) ===== -->
                     <div class="form-group" id="giftCardGroup" style="display:none;">
-                        <label for="giftCardDetails">Gift Card Details</label>
+                        <label for="giftCardUpload">Upload Gift Card Image *</label>
+                        <input type="file" id="giftCardUpload" name="giftCardUpload" accept="image/*" />
+                        <p style="color:#666; font-size:0.8rem; margin-top:4px;">
+                            <i class="fas fa-info-circle"></i> Please upload a clear photo of your gift card
+                        </p>
+                    </div>
+
+                    <!-- ===== REFERENCE IMAGE UPLOAD (RESTORED) ===== -->
+                    <div class="form-group">
+                        <label for="referenceUpload">Tattoo Style / Sample Image (optional)</label>
+                        <input type="file" id="referenceUpload" name="referenceUpload" accept="image/*" />
+                        <p style="color:#666; font-size:0.8rem; margin-top:4px;">
+                            <i class="fas fa-info-circle"></i> Upload a reference image if you have one
+                        </p>
+                    </div>
+
+                    <!-- ===== GIFT CARD DETAILS (Text backup) ===== -->
+                    <div class="form-group" id="giftCardDetailsGroup" style="display:none;">
+                        <label for="giftCardDetails">Gift Card Details (optional if you uploaded an image)</label>
                         <input type="text" id="giftCardDetails" name="giftCardDetails" placeholder="Enter gift card number, store, amount..." />
                     </div>
 
-                    <!-- Reference Description -->
+                    <!-- ===== REFERENCE DESCRIPTION (Text backup) ===== -->
                     <div class="form-group">
-                        <label for="referenceDetails">Tattoo Reference / Style Description (optional)</label>
+                        <label for="referenceDetails">Tattoo Description (optional if you uploaded an image)</label>
                         <input type="text" id="referenceDetails" name="referenceDetails" placeholder="e.g., American Traditional, black and grey, realism..." />
                     </div>
 
@@ -270,7 +289,7 @@
         </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
+        <!-- ===== FOOTER ===== -->
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -514,10 +533,13 @@
         // ===== GIFT CARD SHOW/HIDE =====
         document.getElementById('paymentMethod')?.addEventListener('change', function() {
             const giftCardGroup = document.getElementById('giftCardGroup');
+            const giftCardDetailsGroup = document.getElementById('giftCardDetailsGroup');
             if (this.value === 'Gift Card') {
                 giftCardGroup.style.display = 'block';
+                giftCardDetailsGroup.style.display = 'block';
             } else {
                 giftCardGroup.style.display = 'none';
+                giftCardDetailsGroup.style.display = 'none';
             }
         });
 
