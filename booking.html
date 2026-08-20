@@ -7,22 +7,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
     <style>
-        /* Extra styles to ensure form works */
+        /* ===== BOOKING PAGE STYLES ===== */
+        .booking-wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
         .booking-card {
             background: #ffffff;
             padding: 40px;
             border: 1px solid rgba(0, 0, 0, 0.06);
             margin-bottom: 24px;
         }
+
         .booking-card h3 {
             font-family: 'Playfair Display', Georgia, serif;
             font-size: 1.4rem;
             color: #0d0d0d;
             margin-bottom: 16px;
         }
+
         .booking-card .form-group {
             margin-bottom: 18px;
         }
+
         .booking-card label {
             display: block;
             font-family: 'Inter', sans-serif;
@@ -32,6 +40,7 @@
             margin-bottom: 4px;
             letter-spacing: 0.5px;
         }
+
         .booking-card input,
         .booking-card select,
         .booking-card textarea {
@@ -45,42 +54,50 @@
             font-family: 'Inter', sans-serif;
             transition: border-color 0.3s ease;
         }
+
         .booking-card input:focus,
         .booking-card select:focus,
         .booking-card textarea:focus {
             outline: none;
             border-color: #8b0000;
         }
+
         .booking-card input[type="file"] {
             padding: 10px;
             background: #faf8f5;
         }
+
         .booking-card .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 16px;
         }
+
         .booking-card .terms-check {
             display: flex;
             align-items: center;
             gap: 10px;
             margin: 16px 0;
         }
+
         .booking-card .terms-check input[type="checkbox"] {
             width: 18px;
             height: 18px;
             accent-color: #8b0000;
             margin: 0;
         }
+
         .booking-card .terms-check label {
             font-weight: 400;
             font-size: 0.9rem;
             color: #666;
             margin: 0;
         }
+
         .booking-card .terms-check label a {
             color: #8b0000;
         }
+
         .btn-primary {
             display: inline-block;
             background: #0d0d0d;
@@ -98,11 +115,14 @@
             width: 100%;
             text-align: center;
         }
+
         .btn-primary:hover {
             background: #8b0000;
             transform: translateY(-3px);
             box-shadow: 0 12px 40px rgba(139, 0, 0, 0.25);
         }
+
+        /* ===== SECTION HEADERS ===== */
         .section-tag {
             font-size: 0.75rem;
             font-weight: 700;
@@ -112,6 +132,7 @@
             display: inline-block;
             margin-bottom: 8px;
         }
+
         .section-title {
             font-size: 3rem;
             font-weight: 900;
@@ -119,9 +140,11 @@
             line-height: 1.1;
             margin-bottom: 12px;
         }
+
         .section-title span {
             color: #8b0000;
         }
+
         .section-subtitle {
             font-size: 1.1rem;
             color: #666;
@@ -131,22 +154,27 @@
             font-weight: 400;
             line-height: 1.8;
         }
+
+        /* ===== CALENDAR ===== */
         .calendar-section {
             background: #faf8f5;
             padding: 20px;
         }
+
         .calendar-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 16px;
         }
+
         .calendar-header .month-year {
             font-family: 'Playfair Display', Georgia, serif;
             font-size: 1.2rem;
             font-weight: 700;
             color: #0d0d0d;
         }
+
         .calendar-header .nav-btn {
             background: none;
             border: 1px solid rgba(0, 0, 0, 0.06);
@@ -156,15 +184,18 @@
             font-size: 1rem;
             font-family: 'Inter', sans-serif;
         }
+
         .calendar-header .nav-btn:hover {
             border-color: #8b0000;
             color: #8b0000;
         }
+
         .calendar-grid {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
             gap: 4px;
         }
+
         .calendar-grid .day-name {
             text-align: center;
             font-size: 0.7rem;
@@ -175,6 +206,7 @@
             letter-spacing: 1px;
             font-family: 'Inter', sans-serif;
         }
+
         .calendar-grid .day-btn {
             aspect-ratio: 1;
             border: none;
@@ -190,29 +222,37 @@
             justify-content: center;
             font-family: 'Inter', sans-serif;
         }
+
         .calendar-grid .day-btn:hover:not(.empty):not(.disabled) {
             background: #e8e5df;
         }
+
         .calendar-grid .day-btn.empty {
             cursor: default;
         }
+
         .calendar-grid .day-btn.disabled {
             color: #ccc;
             cursor: not-allowed;
         }
+
         .calendar-grid .day-btn.selected {
             background: #0d0d0d;
             color: #fff;
         }
+
         .calendar-grid .day-btn.today {
             border: 2px solid #8b0000;
         }
+
+        /* ===== TIME SLOTS ===== */
         .time-slots {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 8px;
             margin-top: 16px;
         }
+
         .time-btn {
             padding: 10px;
             border: 1px solid rgba(0, 0, 0, 0.06);
@@ -224,20 +264,25 @@
             transition: all 0.3s ease;
             font-family: 'Inter', sans-serif;
         }
+
         .time-btn:hover:not(.blocked):not(.selected-time) {
             border-color: #8b0000;
             background: #faf8f5;
         }
+
         .time-btn.blocked {
             opacity: 0.3;
             cursor: not-allowed;
             text-decoration: line-through;
         }
+
         .time-btn.selected-time {
             background: #0d0d0d;
             color: #fff;
             border-color: #0d0d0d;
         }
+
+        /* ===== CONFIRMATION ===== */
         .confirmation-box {
             margin-top: 20px;
             padding: 16px 20px;
@@ -249,24 +294,30 @@
             flex-wrap: wrap;
             gap: 12px;
         }
+
         .confirmation-box.show {
             display: flex;
         }
+
         .confirmation-box .info {
             display: flex;
             align-items: center;
             gap: 12px;
         }
+
         .confirmation-box .info i {
             color: #22c55e;
             font-size: 1.2rem;
         }
+
         .confirmation-box .info .details {
             font-size: 0.95rem;
         }
+
         .confirmation-box .info .details strong {
             color: #0d0d0d;
         }
+
         .confirmation-box .btn-cancel {
             background: #f0f0f0;
             border: none;
@@ -278,14 +329,214 @@
             transition: all 0.3s ease;
             font-family: 'Inter', sans-serif;
         }
+
         .confirmation-box .btn-cancel:hover {
             background: #e0e0e0;
         }
-        .booking-wrapper {
-            max-width: 700px;
-            margin: 0 auto;
+
+        /* ===== NAV ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            z-index: 1000;
+            padding: 14px 0;
         }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #0d0d0d;
+            letter-spacing: 3px;
+        }
+
+        .nav-logo span {
+            color: #8b0000;
+        }
+
+        .nav-logo img {
+            height: 45px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #333;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #8b0000;
+        }
+
+        .nav-links .btn-nav {
+            background: #0d0d0d;
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 0;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        .nav-links .btn-nav:hover {
+            background: #8b0000;
+            color: #fff;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 2px;
+            background: #0d0d0d;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #0d0d0d;
+            padding: 50px 0 24px;
+            border-top: 4px solid #8b0000;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: 3px;
+        }
+
+        .footer-brand span {
+            color: #8b0000;
+        }
+
+        .footer-brand .tagline {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 300;
+            display: block;
+            letter-spacing: 3px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .footer-brand p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 12px;
+            line-height: 1.8;
+        }
+
+        footer h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 16px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: #666;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #8b0000;
+        }
+
+        .footer-links a i {
+            margin-right: 8px;
+            color: #8b0000;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            padding-top: 20px;
+            text-align: center;
+            color: #444;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-bottom span {
+            color: #8b0000;
+        }
+
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: #ffffff;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                width: 100%;
+                padding: 24px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+                gap: 16px;
+                text-align: center;
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+            }
             .booking-card .form-row {
                 grid-template-columns: 1fr;
             }
@@ -298,7 +549,12 @@
             .section-title {
                 font-size: 2rem;
             }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
         }
+
         @media (max-width: 480px) {
             .time-slots {
                 grid-template-columns: repeat(2, 1fr);
@@ -318,7 +574,7 @@
     <nav>
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="assets/images/logo.png" alt="Black Sea Tattoo" style="height:45px; width:auto;" />
+                <img src="assets/images/logo.png" alt="Black Sea Tattoo" />
             </div>
             <button class="hamburger" id="hamburger" aria-label="Menu">
                 <span></span><span></span><span></span>
@@ -511,7 +767,7 @@
                         <li><a href="artists.html">Artists</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="pricing.html">Pricing</a></li>
-                         <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
                         <li><a href="aftercare.html">Aftercare</a></li>
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="booking.html">Book Now</a></li>
@@ -533,5 +789,251 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // ============================================================
+        // BOOKING CALENDAR — AVAILABILITY SYSTEM
+        // ============================================================
+
+        const TIME_SLOTS = [];
+        for (let h = 10; h <= 20; h++) {
+            const hour = h > 12 ? h - 12 : h;
+            const ampm = h >= 12 ? 'PM' : 'AM';
+            TIME_SLOTS.push(`${hour}:00 ${ampm}`);
+        }
+
+        const bookings = {};
+
+        let currentDate = new Date();
+        let currentMonth = currentDate.getMonth();
+        let currentYear = currentDate.getFullYear();
+        let selectedDateStr = null;
+        let selectedTime = null;
+
+        const monthYearEl = document.getElementById('monthYear');
+        const calendarGrid = document.getElementById('calendarGrid');
+        const timeSlotsContainer = document.getElementById('timeSlotsContainer');
+        const selectedDateDisplay = document.getElementById('selectedDateDisplay');
+        const confirmationBox = document.getElementById('confirmationBox');
+        const confirmDate = document.getElementById('confirmDate');
+        const confirmTime = document.getElementById('confirmTime');
+        const cancelBtn = document.getElementById('cancelBooking');
+
+        function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+        function formatDateKey(year, month, day) {
+            return `${year}-${pad(month + 1)}-${pad(day)}`;
+        }
+
+        function getBlockedSlots(dateKey) {
+            return new Set(bookings[dateKey] || []);
+        }
+
+        function isSlotAvailable(dateKey, slot) {
+            return !getBlockedSlots(dateKey).has(slot);
+        }
+
+        function getSelectedDateDisplay() {
+            if (!selectedDateStr) return 'No date selected';
+            const parts = selectedDateStr.split('-');
+            const d = new Date(parts[0], parts[1] - 1, parts[2]);
+            return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' });
+        }
+
+        function renderCalendar() {
+            const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+            const today = new Date();
+            const todayStr = formatDateKey(today.getFullYear(), today.getMonth(), today.getDate());
+
+            monthYearEl.textContent = new Date(currentYear, currentMonth).toLocaleDateString('en-US', {
+                month: 'long',
+                year: 'numeric'
+            });
+
+            let html = '';
+            const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            dayNames.forEach(name => {
+                html += `<div class="day-name">${name}</div>`;
+            });
+
+            for (let i = 0; i < firstDay; i++) {
+                html += `<div class="day-btn empty"></div>`;
+            }
+
+            for (let d = 1; d <= daysInMonth; d++) {
+                const dateKey = formatDateKey(currentYear, currentMonth, d);
+                const isToday = dateKey === todayStr;
+                const isSelected = dateKey === selectedDateStr;
+                const thisDate = new Date(currentYear, currentMonth, d);
+                const isPast = thisDate < new Date(today.getFullYear(), today.getMonth(), today.getDate());
+
+                let classes = 'day-btn';
+                if (isToday) classes += ' today';
+                if (isSelected) classes += ' selected';
+                if (isPast) classes += ' disabled';
+
+                html += `<button class="${classes}" data-date="${dateKey}" ${isPast ? 'disabled' : ''}>${d}</button>`;
+            }
+
+            calendarGrid.innerHTML = html;
+
+            document.querySelectorAll('.day-btn:not(.empty):not(.disabled)').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    selectedDateStr = this.dataset.date;
+                    if (selectedDateDisplay) {
+                        selectedDateDisplay.textContent = getSelectedDateDisplay();
+                    }
+                    renderCalendar();
+                    renderTimeSlots();
+                    hideConfirmation();
+                });
+            });
+        }
+
+        function renderTimeSlots() {
+            if (!timeSlotsContainer) return;
+
+            if (!selectedDateStr) {
+                timeSlotsContainer.innerHTML = `
+                    <div style="text-align:center; padding:30px 20px; color:#999;">
+                        <p style="margin:0;">Please select a date first</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const blocked = getBlockedSlots(selectedDateStr);
+            const booked = bookings[selectedDateStr] || [];
+
+            let html = `<div class="time-slots">`;
+            TIME_SLOTS.forEach(slot => {
+                const isBlocked = blocked.has(slot);
+                const isBooked = booked.includes(slot);
+                const isSelected = selectedTime === slot && isBooked;
+
+                let classes = 'time-btn';
+                if (isBlocked) classes += ' blocked';
+                if (isSelected) classes += ' selected-time';
+
+                const label = isSelected ? `✓ ${slot}` : slot;
+
+                html += `
+                    <button class="${classes}" data-time="${slot}" ${isBlocked ? 'disabled' : ''}>
+                        ${label}
+                    </button>
+                `;
+            });
+            html += `</div>`;
+            timeSlotsContainer.innerHTML = html;
+
+            document.querySelectorAll('.time-btn:not(.blocked)').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const slot = this.dataset.time;
+                    bookSlot(slot);
+                });
+            });
+        }
+
+        function bookSlot(slot) {
+            if (!selectedDateStr) return;
+            if (!isSlotAvailable(selectedDateStr, slot)) return;
+
+            if (!bookings[selectedDateStr]) bookings[selectedDateStr] = [];
+            bookings[selectedDateStr].push(slot);
+
+            selectedTime = slot;
+            renderTimeSlots();
+            showConfirmation(slot);
+        }
+
+        function showConfirmation(slot) {
+            if (!confirmationBox) return;
+            const dateDisplay = getSelectedDateDisplay();
+            if (confirmDate) confirmDate.textContent = dateDisplay;
+            if (confirmTime) confirmTime.textContent = slot;
+            confirmationBox.classList.add('show');
+        }
+
+        function hideConfirmation() {
+            if (confirmationBox) confirmationBox.classList.remove('show');
+        }
+
+        if (cancelBtn) {
+            cancelBtn.addEventListener('click', function() {
+                if (!selectedDateStr || !selectedTime) return;
+
+                if (bookings[selectedDateStr]) {
+                    bookings[selectedDateStr] = bookings[selectedDateStr].filter(s => s !== selectedTime);
+                    if (bookings[selectedDateStr].length === 0) {
+                        delete bookings[selectedDateStr];
+                    }
+                }
+
+                selectedTime = null;
+                hideConfirmation();
+                renderTimeSlots();
+            });
+        }
+
+        document.getElementById('prevMonth')?.addEventListener('click', () => {
+            currentMonth--;
+            if (currentMonth < 0) { currentMonth = 11; currentYear--; }
+            renderCalendar();
+        });
+
+        document.getElementById('nextMonth')?.addEventListener('click', () => {
+            currentMonth++;
+            if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+            renderCalendar();
+        });
+
+        // ===== GIFT CARD SHOW/HIDE =====
+        document.getElementById('paymentMethod')?.addEventListener('change', function() {
+            const giftCardGroup = document.getElementById('giftCardGroup');
+            if (this.value === 'Gift Card') {
+                giftCardGroup.style.display = 'block';
+            } else {
+                giftCardGroup.style.display = 'none';
+            }
+        });
+
+        // ===== HAMBURGER TOGGLE =====
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        if (hamburger) {
+            hamburger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navLinks.classList.toggle('open');
+            });
+        }
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger?.classList.remove('active');
+                navLinks?.classList.remove('open');
+            });
+        });
+
+        // ===== INIT =====
+        renderCalendar();
+
+        const today = new Date();
+        const demoDate = formatDateKey(today.getFullYear(), today.getMonth(), today.getDate() + 1);
+        bookings[demoDate] = ['11:00 AM', '2:00 PM', '4:00 PM'];
+
+        const defaultDate = formatDateKey(today.getFullYear(), today.getMonth(), today.getDate());
+        const todayDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+        if (todayDate >= new Date(today.getFullYear(), today.getMonth(), today.getDate())) {
+            selectedDateStr = defaultDate;
+            if (selectedDateDisplay) {
+                selectedDateDisplay.textContent = getSelectedDateDisplay();
+            }
+            renderCalendar();
+            renderTimeSlots();
+        }
+
+        console.log('🖤 Black Sea Tattoo — Booking Page Loaded');
+    </script>
 </body>
 </html>
