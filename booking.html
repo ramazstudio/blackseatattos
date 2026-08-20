@@ -12,7 +12,9 @@
     <!-- ===== NAV ===== -->
     <nav>
         <div class="nav-container">
-            <div class="nav-logo">BLACK <span>SEA</span> TATTOO</div>
+            <div class="nav-logo">
+                <img src="assets/images/logo.png" alt="Black Sea Tattoo" style="height:45px; width:auto;" />
+            </div>
             <button class="hamburger" id="hamburger" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
@@ -40,6 +42,7 @@
             </div>
 
             <div class="booking-wrapper">
+
                 <!-- Calendar -->
                 <div class="booking-card">
                     <h3>📅 Select a Date</h3>
@@ -87,50 +90,52 @@
                     </div>
                 </div>
 
-                <!-- Booking Form -->
-                <form class="booking-card" id="bookingForm">
-                    <h3>📝 Your Details</h3>
+                <!-- ===== BOOKING FORM ===== -->
+                <form class="booking-card" id="bookingForm" name="booking" method="POST" data-netlify="true">
+                    <input type="hidden" name="form-name" value="booking" />
+
+                    <h3 style="font-family:'Playfair Display',Georgia,serif; color:#0d0d0d; margin-bottom:16px;">📝 Your Details</h3>
 
                     <div class="form-row">
                         <div class="form-group">
                             <label for="fullName">Full Name *</label>
-                            <input type="text" id="fullName" placeholder="e.g., John Doe" required />
+                            <input type="text" id="fullName" name="fullName" placeholder="e.g., John Doe" required />
                         </div>
                         <div class="form-group">
                             <label for="email">Email Address *</label>
-                            <input type="email" id="email" placeholder="you@example.com" required />
+                            <input type="email" id="email" name="email" placeholder="you@example.com" required />
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" placeholder="(123) 456-7890" required />
+                        <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890" required />
                     </div>
 
                     <div class="form-group">
                         <label for="tattooIdea">Tattoo Idea / Description *</label>
-                        <textarea id="tattooIdea" rows="3" placeholder="Describe what you want..." required></textarea>
+                        <textarea id="tattooIdea" name="tattooIdea" rows="3" placeholder="Describe what you want..." required></textarea>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
                             <label for="preferredDate">Preferred Date *</label>
-                            <input type="date" id="preferredDate" required />
+                            <input type="date" id="preferredDate" name="preferredDate" required />
                         </div>
                         <div class="form-group">
                             <label for="preferredTime">Preferred Time *</label>
-                            <input type="time" id="preferredTime" required />
+                            <input type="time" id="preferredTime" name="preferredTime" required />
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="sizePlacement">Size &amp; Placement *</label>
-                        <input type="text" id="sizePlacement" placeholder="e.g., 6 inches, forearm" required />
+                        <input type="text" id="sizePlacement" name="sizePlacement" placeholder="e.g., 6 inches, forearm" required />
                     </div>
 
                     <div class="form-group">
                         <label for="paymentMethod">Payment Method *</label>
-                        <select id="paymentMethod" required>
+                        <select id="paymentMethod" name="paymentMethod" required>
                             <option value="">Select a payment method...</option>
                             <option value="Bank Transfer">Bank Transfer</option>
                             <option value="PayPal">PayPal</option>
@@ -140,24 +145,26 @@
                         </select>
                     </div>
 
+                    <!-- Gift Card Upload -->
                     <div class="form-group" id="giftCardGroup" style="display:none;">
                         <label for="giftCardUpload">Upload Gift Card Image *</label>
-                        <input type="file" id="giftCardUpload" accept="image/*" />
+                        <input type="file" id="giftCardUpload" name="giftCardUpload" accept="image/*" />
                         <p style="color:#666; font-size:0.8rem; margin-top:4px;">
                             <i class="fas fa-info-circle"></i> Please upload a clear photo of your gift card
                         </p>
                     </div>
 
+                    <!-- Reference Upload -->
                     <div class="form-group">
                         <label for="referenceUpload">Tattoo Style / Sample (optional)</label>
-                        <input type="file" id="referenceUpload" accept="image/*" />
+                        <input type="file" id="referenceUpload" name="referenceUpload" accept="image/*" />
                         <p style="color:#666; font-size:0.8rem; margin-top:4px;">
                             <i class="fas fa-info-circle"></i> Upload a reference image if you have one
                         </p>
                     </div>
 
                     <div class="terms-check">
-                        <input type="checkbox" id="terms" required />
+                        <input type="checkbox" id="terms" name="terms" required />
                         <label for="terms">
                             I agree to the <a href="#">Terms &amp; Conditions</a>
                         </label>
@@ -172,6 +179,7 @@
                         Your booking will be sent to <strong>tattoo.blacksee@gmail.com</strong>
                     </p>
                 </form>
+
             </div>
         </div>
     </section>
@@ -182,9 +190,12 @@
             <div class="footer-grid">
                 <div>
                     <div class="footer-brand">
-                        BLACK <span>SEA</span>
-                        <span class="tagline">TATTOO</span>
-                        <p>Bold · Clean · Bright — WE DO IT RIGHT<br />2523 North Main St., Walnut Creek, CA 94597</p>
+                        <img src="assets/images/logo.png" alt="Black Sea Tattoo" style="height:35px; width:auto; margin-bottom:8px;" />
+                        <span class="tagline" style="display:block; color:#666; font-size:0.8rem; letter-spacing:3px;">TATTOO</span>
+                        <p style="color:#666; font-size:0.9rem; margin-top:10px; line-height:1.8;">
+                            Bold · Clean · Bright — WE DO IT RIGHT<br />
+                            2523 North Main St., Walnut Creek, CA 94597
+                        </p>
                     </div>
                 </div>
                 <div>
@@ -218,4 +229,4 @@
 
     <script src="script.js"></script>
 </body>
-</html>
+    </html>
